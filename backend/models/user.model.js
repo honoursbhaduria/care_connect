@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
+    name: {
+        type: String,
+    },
     email:{
         type: String,
         unique : true,
@@ -11,7 +14,7 @@ const userSchema = new mongoose.Schema({
     },
     role: {
         type: String,
-        enum: ['user', 'volunteer'],
+        enum: ['user', 'ngo'],
         required: true,
         default: 'user'
     }
