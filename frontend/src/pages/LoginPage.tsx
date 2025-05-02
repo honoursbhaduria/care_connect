@@ -24,7 +24,7 @@ const LoginPage = () => {
     // Simulate authentication (replace with actual authentication later)
     setTimeout(() => {
       setIsLoading(false);
-git     }, 1500);
+    }, 1500);
   };
 
   return (
