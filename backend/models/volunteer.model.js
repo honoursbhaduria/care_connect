@@ -1,12 +1,14 @@
 import mongoose from "mongoose";
 
-const volunteerProfileSchema = new mongoose.Schema({
+const volunteerSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   name: String,
   skills: [String],
   availability: String,
   location: String,
-  matchedRequests: [{ type: mongoose.Schema.Types.ObjectId, ref: 'HelpRequest' }]
+  matchedRequests: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Help' }]
 }, { timestamps: true });
 
-module.exports = mongoose.model('VolunteerProfile', volunteerProfileSchema)
+const volunteerModel = mongoose.model("volunteer", volunteerSchema);
+
+export default volunteerModel;
