@@ -2,7 +2,7 @@
 import jwt from 'jsonwebtoken';
 const JWT_SECRET = process.env.JWT_SECRET || 'yoursecretkey';
 
-export const authenticate = (req, res, next) => {
+export const protect = (req, res, next) => {
   const token = req.headers.authorization?.split(" ")[1];
   if (!token) return res.status(401).json({ message: 'No token provided' });
 
@@ -15,7 +15,7 @@ export const authenticate = (req, res, next) => {
   }
 };
 
-export const authorize = (...roles) => {
+export const roleCheck = (...roles) => {
   return (req, res, next) => {
     if (!roles.includes(req.user.role)) {
       return res.status(403).json({ message: 'Access forbidden: insufficient role' });
@@ -23,3 +23,6 @@ export const authorize = (...roles) => {
     next();
   };
 };
+
+
+export default { roleCheck, protect };

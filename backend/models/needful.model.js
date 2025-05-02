@@ -1,8 +1,13 @@
-const needfulProfileSchema = new mongoose.Schema({
+import mongoose from 'mongoose';
+
+const needfulSchema = new mongoose.Schema({
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
     name: String,
     needs: String,
     location: String,
-    requests: [{ type: mongoose.Schema.Types.ObjectId, ref: 'HelpRequest' }]
+    requests: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Help' }]
   }, { timestamps: true });
-module.exports = mongoose.model('NeedfulProfile', needfulProfileSchema);
+
+const needfulModel = mongoose.model("needful", needfulSchema);
+
+export default needfulModel;

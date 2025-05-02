@@ -11,10 +11,12 @@ const userSchema = new mongoose.Schema({
     },
     role: {
         type: String,
-        enum: ['user', 'volunteer', 'NGO'],
+        enum: ['user', 'volunteer'],
         required: true,
         default: 'user'
     }
 }, { timestamps: true });
 
-module.exports = mongoose.model('User', userSchema);
+const userModel = mongoose.model("user", userSchema);
+
+export default userModel;
