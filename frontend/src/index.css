@@ -167,3 +167,8 @@
     @apply backdrop-blur-md bg-white/80 border border-white/20;
   }
 }
+@layer utilities {
+  .border-border {
+    border-color: hsl(var(--border));
+  }
+}
