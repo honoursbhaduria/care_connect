@@ -225,28 +225,22 @@ const values = [
 // Team data
 const team = [
   {
-    name: "Dr. Maria Sanchez",
-    role: "Founder & CEO",
-    bio: "With 15+ years in healthcare, Maria founded Care Connect to bridge gaps in community care access.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
-  },
-  {
-    name: "David Chen",
-    role: "Chief Technology Officer",
-    bio: "David leads our technical development, ensuring our platform is accessible and user-friendly.",
+    name: "Rishav Raj",
+    role: "Backend Dev",
+    bio: "works on Backend ",
     image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
   },
   {
-    name: "Sarah Johnson",
-    role: "Community Director",
-    bio: "Sarah builds partnerships with local organizations and coordinates our volunteer network.",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
+    name: "Honours Bhadauria",
+    role:  "Frontend Dev",
+    bio: " Works on frontend ",
+    image: "https://avatars.githubusercontent.com/u/185463007?v=4"
   },
   {
-    name: "Michael Rodriguez",
-    role: "Healthcare Liaison",
-    bio: "Michael works with healthcare providers to ensure seamless coordination of care.",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
+    name: "Viahal Dubey",
+    role: "Team Leader",
+    bio: "Vishal works with us to ensure seamless coordination .",
+    image: "https://avatars.githubusercontent.com/u/188987520?v=4"
   }
 ];
 
