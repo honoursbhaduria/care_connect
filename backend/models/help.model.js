@@ -8,11 +8,11 @@ const helpSchema = new mongoose.Schema({
     time: Date,
     status: { 
         type: String, 
-        enum: ['pending', 'in-progress', 'completed'], 
-        default: 'pending' 
+        enum: ['open', 'in-progress', 'completed'], 
+        default: 'open' 
     },
-    // Optional: add field for volunteer who accepts the help request
-    volunteer: { 
+    // Optional: add field for ngo who accepts the help request
+    ngo: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User',
         default: null
