@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const helpSchema = new mongoose.Schema({
     title: String,
     description: String,
-    requester: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+    //requester: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
     location: String,
     time: Date,
     status: { 

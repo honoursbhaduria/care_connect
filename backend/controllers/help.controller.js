@@ -2,7 +2,7 @@ import helpModel from '../models/help.model.js';
 import ngoModel from '../models/ngo.model.js';
 
 export const createRequest = async (req, res) => {
-  const { title, description,  location, time } = req.body;
+  const { title, description, category,  location, time } = req.body;
   
   const newRequest = new helpModel({
     title,
@@ -10,7 +10,7 @@ export const createRequest = async (req, res) => {
     category,
     location,
     time,
-    requester: req.user.id,
+    
     status: 'open',
     ngo: null
   });
@@ -189,3 +189,5 @@ export const updatengoProfile = async (req, res) => {
   await profile.save();
   res.json(profile);
 };
+
+
