@@ -13,11 +13,16 @@ const LogoutPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Show toast when component mounts
+    const logout = () => {
+      // Remove token and user info from localStorage
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
     toast({
       title: "Logged out successfully",
       description: "You have been logged out of your Care Connect account",
     });
+    };
+    logout();
   }, [toast]);
 
   const handleGoHome = () => {

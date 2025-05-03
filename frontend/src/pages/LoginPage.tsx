@@ -9,7 +9,9 @@ import { useToast } from "@/components/ui/use-toast";
 import { LogIn, User, ArrowRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import axios from 'axios';
 
+const API_URL = 'http://localhost:5000';
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -20,11 +22,43 @@ const LoginPage = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    try {
+      // Call the login API endpoint
+      const response = await axios.post(`${API_URL}/auth/login`, {
+        email,
+        password
+      });
 
-    // Simulate authentication (replace with actual authentication later)
-    setTimeout(() => {
+      // Store the token and user info in localStorage
+      localStorage.setItem('token', response.data.token);
+      localStorage.setItem('user', JSON.stringify(response.data.user));
+
+      // Show success toast
+      toast({
+        title: "Login successful",
+        description: "You have been logged in to your Care Connect account",
+        variant: "default",
+      });
+
+      // Redirect to dashboard or home page based on user role
+      const userRole = response.data.user.role;
+      if (userRole === 'admin') {
+        navigate('/admin/dashboard');
+      } else {
+        navigate('/dashboard');
+      }
+    } catch (error) {
+      // Handle errors
+      const errorMessage = error.response?.data?.message || 'Login failed. Please try again.';
+      
+      toast({
+        title: "Login failed",
+        description: errorMessage,
+        variant: "destructive",
+      });
+    } finally {
       setIsLoading(false);
-    }, 1500);
+    }
   };
 
   return (

@@ -22,9 +22,9 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //ROUTES
-app.use('/api/v1/auth', authRoutes);
-app.use('/api/v1/help', helpRoutes);
-app.use('/api/v1/ngo', ngoRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/help', helpRoutes);
+app.use('/api/ngo', ngoRoutes);
 
 app.get('/', (req, res) => {
     res.json({ message: 'Welcome to the careconnect backend API' });
